@@ -4,9 +4,6 @@ import jellyfish
 import streamlit as st
 import io
 
-# Ensure you have xlsxwriter installed
-# You can do this by running: pip install xlsxwriter
-
 # Define the function for matching products
 def match_products(basket_df, master_df, threshold=65):
     matched_basket = []
