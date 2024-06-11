@@ -5,7 +5,7 @@ import streamlit as st
 import io
 
 # Define the function for matching products
-def match_products(basket_df, master_df, threshold=65):
+def match_products(basket_df, master_df, threshold):
     matched_basket = []
     for index, row in basket_df.iterrows():
         basket_desc = row["Product Description"]
@@ -50,7 +50,7 @@ basket_file = st.file_uploader("Upload Basket Excel File", type=["xlsx"])
 master_file = st.file_uploader("Upload Master CSV File (Contract list)", type=["csv"])
 
 # Text input for output file name
-output_file_name = st.text_input("Enter the file name for the download (without extension)", "")
+output_file_name = st.text_input("Enter the file name for download (without extension)", "")
 
 # Button to run the matching process
 if st.button("Run Matching Process"):
