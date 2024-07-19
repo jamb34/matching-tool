@@ -36,22 +36,24 @@ def match_products(basket_df, master_df, threshold):
 
     return pd.DataFrame(matched_basket)
 
-# Streamlit interface
+#Interface
 st.title("Product Matching Tool")
+
+st.markdown("Please make sure that both files have columns named Product Description. This column is where the products should be held. Please refer to the Matching and Inputting advice Word Document")
 
 # Slider for threshold selection
 threshold = st.slider("Select Matching Threshold", min_value=0, max_value=99, value=80, step=1)
 
 # Text input for sheet name
-sheet_name = st.text_input("Enter the Tab Name Where The Basket Belongs in Excel Workbook", "")
+sheet_name = st.text_input("Enter the Tab Name Where The Basket Belongs in Excel Workbook. E.g. Sheet1", "")
 
 # File upload
 basket_file = st.file_uploader("Upload Client Basket Excel File", type=["xlsx"])
-st.markdown("Master files can be found here https://allmanhall.app.box.com/folder/275580565569")
+st.write("Master files can be found in the 725-1 Benchmarking TEMPLATES")
 master_file = st.file_uploader("Upload Contract List CSV File (Master List).", type=["csv"])
 
 # Text input for output file name
-output_file_name = st.text_input("Enter the file name for download (without extension)", "")
+output_file_name = st.text_input("Enter the file name for the download", "")
 
 # Button to run the matching process
 if st.button("Run The Matching Process"):
