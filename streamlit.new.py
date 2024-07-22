@@ -49,7 +49,7 @@ sheet_name = st.text_input("Enter the Tab Name Where The Basket Belongs in Excel
 
 # File upload
 basket_file = st.file_uploader("Upload Client Basket Excel File", type=["xlsx"])
-st.write("Master files can be found in the 725-1 Benchmarking TEMPLATES")
+st.write("Master files can be found in the 725-1 Benchmarking TEMPLATES folder")
 master_file = st.file_uploader("Upload Contract List CSV File (Master List).", type=["csv"])
 
 # Text input for output file name
